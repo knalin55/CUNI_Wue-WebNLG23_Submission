@@ -27,7 +27,7 @@ parser.add_argument("--ckpt_path", default=None, type=str, help="Checkpoint Path
 parser.add_argument("--log_dir", default=None, type=str, help="Path to log directory")
 parser.add_argument("--task", default="tg", type=str, help="[tg/all(text gen + translation)]")
 
-parser.add_argument("--languages", default="ga", type=str, help="[ga/mt/br/cy/ru/all/","separated languages]")
+parser.add_argument("--languages", default="ga", type=str, help="[ga/mt/br/cy/ru/all/ , separated languages]")
 parser.add_argument("--model", default="google/mt5-base", type=str, help="Seq to Seq Model")
 parser.add_argument("--data_path", default=None, type=str, help="Data Path")
 parser.add_argument("--cache_dir", default=None, type=str, help="Path to HuggingFace cache directory")
