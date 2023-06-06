@@ -225,7 +225,7 @@ def main(args: argparse.Namespace) -> None:
         weight_decay=args.weight_decay,
         evaluation_strategy = "epoch",
         save_strategy= "epoch",
-        save_total_limit =1,
+        save_total_limit =2,
         gradient_accumulation_steps=args.gradient_accumulation_steps,
         )
 
