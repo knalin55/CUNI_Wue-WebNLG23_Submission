@@ -32,11 +32,10 @@ parser.add_argument("--experiment", default=None, type=str, help="Alignment")
 
 parser.add_argument("--languages", default="ga", type=str, help="[ga/mt/br/cy/ru/all/ , separated languages]")
 parser.add_argument("--model", default="google/mt5-base", type=str, help="Seq to Seq Model")
-parser.add_argument("--data_path", default="/home/nkumar/thesis/thesis/", type=str, help="Data Path")
-parser.add_argument("--cache_dir", default="/home/nkumar/personal_work_ms/.cache", type=str, help="Path to HuggingFace cache directory")
+parser.add_argument("--data_path", default=None, type=str, help="Data Path")
+parser.add_argument("--cache_dir", default=None, type=str, help="Path to HuggingFace cache directory")
 
-base_model_path = "/home/nkumar/personal_work_troja/thesis/logs/semantic_parsing.py-2023-06-12_010742/check_points/sem_parsing_MT5_ga/checkpoint-110725/"
-
+base_model_path = None
 def prefix(text, lang, task):
     
     lang_dict = {"ga": "Irish",
