@@ -3,7 +3,6 @@ import numpy as np
 from random import shuffle
 import transformers
 import random
-from Challenge2023.utils.benchmark_reader import Benchmark, select_files # Change this line according to the directory where your training data is located
 from transformers import AutoModelForSeq2SeqLM, Seq2SeqTrainingArguments, Seq2SeqTrainer, AutoTokenizer, DataCollatorForSeq2Seq
 from datasets import Dataset
 from nltk.tokenize import sent_tokenize
@@ -15,6 +14,8 @@ import re
 import torch
 from typing import Dict
 from tqdm import tqdm
+
+exec(open("./2023-Challenge/utils/benchmark_reader.py").read())
 
 base_model_path = None #
 
