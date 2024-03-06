@@ -96,7 +96,7 @@ def process_triples(fil_dir, data_split="train", languages=["ga"], task_="tg", a
     for lang in languages:
         
         if lang == "br":
-            fil_dir = os.path.join(fil_dir, "models/data_latest/data/")
+            fil_dir = os.path.join(fil_dir, "./2023-Challenge/data/")
             data_path = os.path.join(fil_dir, f"{lang}_{data_split}.xml")
 
             b = Benchmark()
