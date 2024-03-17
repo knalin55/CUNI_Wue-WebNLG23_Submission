@@ -55,7 +55,7 @@ def main(args: argparse.Namespace) -> None:
     if args.languages == "all":
         languages = ["ga", "mt", "cy", "ru"]
     else:
-        languages = [lang.strip() for lang in args.languages.split(",")]
+        languages = [lang.strip().lower() for lang in args.languages.split(",")]
 
     #Process data
     data_train = process_triples(args.data_path, "train", languages=languages, task_=args.task, alignment_type=args.alignment)
