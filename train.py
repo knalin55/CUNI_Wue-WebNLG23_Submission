@@ -47,7 +47,7 @@ def main(args: argparse.Namespace) -> None:
         os.path.basename(globals().get("__file__", "notebook")),
         datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S")
     ))
-        args.logdir = os.path.join("/home/nkumar/personal_work_troja/thesis/", args.logdir)
+        args.logdir = os.path.join("./", args.logdir)
 
     # Load Tokenizer
     tokenizer = AutoTokenizer.from_pretrained(args.model, device_map="auto", cache_dir=args.cache_dir)
