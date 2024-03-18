@@ -21,8 +21,8 @@ import argparse
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model_path", default=None, type=str, help="Seq to Seq Model")
-parser.add_argument("--data_path", default=None, type=str, help="Data Path")
+parser.add_argument("--model_path", default=None, type=str, help="Path to model checkpoint")
+parser.add_argument("--data_path", default=None, type=str, help="Path to dataset directory") # ./2023-Challenge/data
 parser.add_argument("--data_type", default="dev", type=str, help="Data Type (val/test)")
 parser.add_argument("--languages", default="ga", type=str, help="Language")
 parser.add_argument("--output", default=None, type=str, help="output file description")
