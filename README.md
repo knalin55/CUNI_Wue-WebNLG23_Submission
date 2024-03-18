@@ -58,7 +58,10 @@ General arguments and their usage
 ## Usage (Text Generation)
 
 ```
-python generate.py --languages LANG --triple_split TS --cs 2
+python generate.py --model_path PATH_TO_MODEL_CKPT_DIR --data_path PATH_TO_DATASET_DIR --languages LANG --triple_split TS --cs 2
+```
+Arguments and their description
+```
 --languages           Language(s) for data-to-text generation task; 
                         "," separated language codes from {br, cy, ga, ru, mt}
 --triple_split        Partial decoding split; [subject/single/None];
@@ -66,13 +69,13 @@ python generate.py --languages LANG --triple_split TS --cs 2
                        (with chunk size --cs),
                       single: Split triples into single triple
                       None: No partial decoding 
---cs                  Chunk size for partial decoding; Note: valid only for 
+--cs                  Chunk size (No. of triples) for partial decoding; Note: valid only for 
                       triple_split == subject
 ```
 
 ## Example Usage
 
-To implement MTL + SaG experiment for Irish language: 
+To implement MTL + SaG experiment for Irish language (with partial decoding | split w.r.t. subjects): 
 
 
 1.   Train using
@@ -81,5 +84,5 @@ python train.py --languages ga --task all --experiment Irish_MTL
 ```
 2.   Generate using
 ```
-python generate.py --languages ga --triple_split subject --cs 100
+python generate.py --model_path PATH_TO_MODEL_CKPT_DIR --data_path PATH_TO_DATASET_DIR --data_type dev --languages ga --triple_split subject --cs 100
 ```
