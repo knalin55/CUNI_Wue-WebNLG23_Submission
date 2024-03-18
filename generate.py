@@ -21,8 +21,8 @@ import argparse
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model_path", default="t5-small", type=str, help="Seq to Seq Model")
-parser.add_argument("--data_path", default="/home/nkumar/thesis/thesis/models/data_latest/data/", type=str, help="Data Path")
+parser.add_argument("--model_path", default=None, type=str, help="Seq to Seq Model")
+parser.add_argument("--data_path", default=None, type=str, help="Data Path")
 parser.add_argument("--data_type", default="dev", type=str, help="Data Type (val/test)")
 parser.add_argument("--languages", default="ga", type=str, help="Language")
 parser.add_argument("--output", default=None, type=str, help="output file description")
