@@ -173,7 +173,6 @@ def main(args: argparse.Namespace) -> None:
 
         for triple_list, text_ in tqdm(zip(test["triple"], test["text"]), total=len(test["text"])):
             inputs = [prefix(create_triples(triple_), args.languages) for triple_ in triple_list]
-            print(inputs)
             input_ids = tokenizer(inputs, return_tensors="pt", padding=True, truncation=True).input_ids.to(device=args.device)
             #label = tokenizer(batch["text"], return_tensors="pt", max_length=512, padding= True).input_ids.to(device='cpu')
             outputs = model.to(device=args.device).generate(input_ids, do_sample=False, max_length=512, num_beams=4, repetition_penalty=args.rp)
